@@ -18,6 +18,11 @@ export class TabsPage {
   tab4Root: any = ContactPage;
 
   constructor() {
-
+    // alert()
+    // setTimeout(()=> {
+    //    console.log(document.getElementById('tab-t0-3'))
+    //   //document.getElementById('tab-t0-3').click()
+    //   alert()
+    // },2000)
   }
 }

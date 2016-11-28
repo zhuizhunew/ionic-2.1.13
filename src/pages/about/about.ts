@@ -19,7 +19,7 @@ import {Loading} from '../../tools/loading';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html',
-  providers: [ProductData,Loading]
+  // providers: [ProductData,Loading]
 })
 
 export class AboutPage {
@@ -73,7 +73,7 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController, private fetch: Fetch, private popoverCtrl: PopoverController,
               private router: Router, private dataPool: DataPool, private productData: ProductData,private load: Loading) {
-    console.log('window.devicePixelRatio',window.devicePixelRatio);
+    // console.log('window.devicePixelRatio',window.devicePixelRatio);
     this.heigt = screen.height - 50;
     this.width = screen.width - 90;
     this.productData.getCategory().then(data => {
@@ -110,6 +110,9 @@ export class AboutPage {
     this.productData.getProductInfo(21).then(data => {
       this.load.hideLoading();
       this.goods = this.productData.fillCartCount(data);
+    }).catch((err) => {
+      this.load.hideLoading();
+      alert(err);
     })
   }
 

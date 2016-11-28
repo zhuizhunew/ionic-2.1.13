@@ -1,5 +1,5 @@
-import {NgModule, ErrorHandler} from '@angular/core';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {NgModule} from '@angular/core';
+import {IonicApp, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {AboutPage} from '../pages/about/about';
 import {ContactPage} from '../pages/contact/contact';
@@ -19,6 +19,7 @@ import {GoodsOrderPage} from '../pages/goods-order/goods-order';
 import {Header} from '../directives/header/header';
 import {GoodsPage} from '../pages/goods/goods';
 import {Loading} from '../tools/loading';
+import {ProductData} from '../providers/product-data';
 
 @NgModule({
     declarations: [
@@ -40,10 +41,10 @@ import {Loading} from '../tools/loading';
     ],
     imports: [
         IonicModule.forRoot(MyApp, {tabsPlacement: 'bottom', popoverEnter: 'popover-pop-in'}, {
-            links: [
-                {component: LoginPage, name: 'Login', segment: 'login'},
-                {component: LogoutPage, name: 'Logout', segment: 'logout'},
-            ]
+            // links: [
+            //     {component: LoginPage, name: 'Login', segment: 'login'},
+            //     {component: LogoutPage, name: 'Logout', segment: 'logout'},
+            // ]
         })
     ],
     bootstrap: [IonicApp],
@@ -64,7 +65,7 @@ import {Loading} from '../tools/loading';
         Header,
         GoodsPage
     ],
-    providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Router, Fetch, DataPool, Loading]
+    providers: [Router, Fetch, DataPool, Loading, ProductData]
 })
 export class AppModule {
 }
