@@ -1,0 +1,11 @@
+{
+  "name": "ionic2-app-base",
+  "app_id": "",
+  "typescript": true,
+  "v2": true,
+  "proxies": [
+    {
+      "path": "/food/",
+      "proxyUrl": "http://112.74.169.211:9999"
+    }]
+}
